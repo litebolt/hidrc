@@ -31,7 +31,8 @@ server.on('register', function (key, device) {
   })
 
   device.on('update', function (data) {
-    device.setRawRc({}, function (error, ident) {
+  var stickObject = {}
+    device.setRawRc(stickObject, function (error, ident) {
       console.log('send message'+ident)
       console.log('send data'+stick)
     })
@@ -43,10 +44,4 @@ server.on('register', function (key, device) {
   
     
 })
-
-
-
-
-
-
 
